@@ -14,7 +14,6 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
-apply plugin: 'docker'
 
 jar {
     baseName = 'gs-spring-boot-docker'
@@ -36,6 +35,8 @@ dependencies {
 task wrapper(type: Wrapper) {
     gradleVersion = '2.4'
 }
+
+apply plugin: 'docker'
 
 task buildDocker(type: Docker, dependsOn: build) {
   push = true
